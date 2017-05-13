@@ -139,7 +139,7 @@ exports.sendCode = (req, res) => {
     const email = req.body.email.toString().toLowerCase();
     const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
     const session = req.sessionID;
-    return emailPlugin.sendCode(email, 'Shadowsocks验证码', '欢迎新用户注册，\n您的验证码是：', {
+    return emailPlugin.sendCode(email, '我是一个验证码', '欢迎新用户注册，\n您的验证码是：', {
       ip,
       session,
     });
